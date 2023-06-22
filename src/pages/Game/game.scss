@@ -1,0 +1,28 @@
+@import 'src/styles/functions/toRem';
+
+.game {
+	min-height: inherit;
+
+	.game-container {
+		min-height: inherit;
+		display: grid;
+		place-items: center;
+	}
+
+	&-modal {
+		min-width: rem(300);
+		min-height: rem(200);
+
+		h4 {
+			margin-bottom: rem(20);
+			text-align: center;
+			text-transform: uppercase;
+			font-size: rem(40);
+			color: var(--black);
+		}
+	}
+
+	&-play {
+		margin-inline: auto;
+	}
+}

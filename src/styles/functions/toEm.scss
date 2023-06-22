@@ -1,0 +1,6 @@
+@use 'sass:math' as math;
+// to EM
+@function em($pxOne, $pxTwo) {
+	$result: math.div($pxOne, $pxTwo) + em;
+	@return $result;
+}

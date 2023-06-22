@@ -1,0 +1,50 @@
+@import 'src/styles/functions/toRem';
+
+.modal {
+	padding: rem(25);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 500;
+	transform: translate(-50%, -50%);
+	border-radius: rem(35);
+	background-color: var(--white);
+
+	&-close {
+    display: block;
+		width: rem(40);
+		height: rem(40);
+    margin-left: auto;
+    margin-bottom: rem(10);
+    cursor: pointer;
+		position: relative;
+    background-color: transparent;
+
+		&::before,
+		&::after {
+			content: '';
+			width: inherit;
+			height: rem(4);
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform-origin: center center;
+			background-color: var(--gray);
+		}
+
+		&::before {
+			transform: translate(-50%, -50%) rotate(45deg);
+		}
+
+		&::after {
+			transform: translate(-50%, -50%) rotate(-45deg);
+		}
+	}
+}
+
+.modal-backdrop {
+	position: absolute;
+	inset: 0;
+	z-index: 490;
+	background-color: rgba(var(--black-rgb), 0.8);
+}

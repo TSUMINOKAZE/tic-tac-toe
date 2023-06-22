@@ -1,0 +1,79 @@
+@import 'src/styles/functions/toRem.scss';
+@import 'src/styles/functions/toEm.scss';
+
+.board-box {
+	display: grid;
+	place-items: center;
+	position: relative;
+	cursor: pointer;
+
+	.zero,
+	.cross {
+		width: rem(80);
+		height: rem(80);
+		position: relative;
+	}
+
+	.zero {
+		border: rem(26) solid transparent;
+		border-radius: 50%;
+		background-image: linear-gradient(var(--white), var(--white)),
+			linear-gradient(to bottom, var(--orange-light) 35.2%, var(--orange) 100%);
+		background-origin: border-box;
+		background-clip: content-box, border-box;
+
+		& + .shadow {
+			background-color: var(--orange);
+		}
+	}
+
+	.cross {
+		background-image: linear-gradient(to bottom, var(--blue-light) 37.8%, var(--blue) 100%);
+		clip-path: polygon(
+			23.75% 0%,
+			0% 23.75%,
+			23.75% 50%,
+			0% 76.25%,
+			23.75% 100%,
+			50% 76.25%,
+			76.25% 100%,
+			100% 76.25%,
+			76.25% 50%,
+			100% 23.75%,
+			76.25% 0%,
+			50% 23.75%
+		);
+
+		& + .shadow {
+			background-color: var(--blue);
+		}
+	}
+
+	.shadow {
+		width: rem(74);
+		height: rem(8);
+		position: absolute;
+		bottom: rem(18);
+		filter: blur(7.5px);
+	}
+}
+
+@media screen and (max-width: em(500, 16)) {
+	.board-box {
+		.zero,
+		.cross {
+			width: rem(47);
+			height: rem(47);
+		}
+
+		.zero {
+			border: rem(15.3) solid transparent;
+		}
+
+		.shadow {
+			width: rem(43.5);
+			height: rem(4.7);
+			bottom: rem(10.5);
+		}
+	}
+}

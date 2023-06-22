@@ -1,0 +1,6 @@
+@use 'sass:math' as math;
+// to %
+@function prc($pxOne, $pxTwo) {
+	$result: math.div($pxOne, $pxTwo) * 100%;
+	@return $result;
+}

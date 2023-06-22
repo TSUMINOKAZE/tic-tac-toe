@@ -1,0 +1,24 @@
+@import 'src/styles/functions/toRem';
+@import 'src/styles/functions/toEm';
+
+.btn {
+	display: block;
+	padding: em(10, 21) em(25, 21);
+	font-family: inherit;
+	font-size: rem(21);
+	text-align: center;
+	cursor: pointer;
+
+	&-outline {
+		color: var(--black);
+		border: em(2, 21) solid var(--black);
+		border-radius: em(10, 21);
+		background-color: transparent;
+		transition: color 200ms ease-in, background-color 200ms ease-in;
+
+		&:hover {
+			color: var(--white);
+			background-color: var(--black);
+		}
+	}
+}

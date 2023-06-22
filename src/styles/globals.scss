@@ -1,0 +1,22 @@
+@import './reset';
+@import './variables/colors';
+@import './fonts';
+
+body {
+	font-family: 'Boogaloo';
+	font-size: 1rem;
+	line-height: 1;
+	font-weight: 400;
+}
+
+#root {
+	width: 100%;
+	min-height: 100vh;
+	position: relative;
+	overflow: hidden;
+	background: linear-gradient(to bottom, var(--blue) 0%, var(--blue-medium) 70.6%);
+
+	> main {
+		min-height: inherit;
+	}
+}
